@@ -1,0 +1,42 @@
+#!/usr/bin/env Rscript
+cmd <- basename(gsub("--file=", "", grep("^--file", commandArgs(), value=TRUE)))
+args <- commandArgs(TRUE)
+
+if("-h" %in% args || "--help" %in% args) {
+    cat("Convert Rmd files to markdown (default), html, odt or pdf format
+Usage:", cmd, "filename [options]
+Options
+	--html	convert to html format
+	--md	convert to mardown (default)
+	--odt	convert to odt format, requires pandoc
+        --pdf	convert to latex/pdf, requires pandoc
+")
+    q()
+}
+
+format <- gsub("--", "", grep("^--(html|md|odt|pdf)$", commandArgs(), value="TRUE"))
+if(length(format) == 0 ) format <- "md"
+
+if(length(format) > 1) {
+    message(cmd, ": too many options")
+    q(status=1)
+}
+
+args <- grep("^--", args, value=TRUE, invert=TRUE)
+if(length(args) == 0) {
+    message(cmd, ": missing file")
+    q(status=2)
+}
+
+file <- args[[1]]
+if(!file.exists(file)) {
+    message(cmd, ": file ", file, " does not exist")
+    q(status=3)
+}
+
+library(knitr)
+switch(format, "html"=knit2html(file, quiet=TRUE),
+               "md"=knit(file, quiet=TRUE),
+               "odt"=pandoc(file, format="odt"),
+               "pdf"=pandoc(file, format="latex")
+)
