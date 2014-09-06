@@ -5,8 +5,15 @@
 This is a set of useful R programs and Rscripts I started to collect during the Data Science Specialization.
 
 ### Rmdformat
-Script to convert Rmd files to other formats: md (default), html, odt or pdf.
-To convert to odf and pdf you must have 'pandoc' installed.
+Script to convert <tt>Rmd</tt> files to other formats: <tt>md</tt> (default),
+<tt>html</tt>, <tt>odt</tt> or <tt>pdf</tt>. To convert to <tt>odf</tt> and 
+<tt>pdf</tt> you must have <tt>pandoc</tt> installed.
+
+##### Example
+```sh
+    $ Rmdformat --html analysis.Rmd
+```
+produces the <tt>pdf</tt> of the <tt>analysis.Rmd</tt> file.
 
 ### setlocale.R
 Sys.setlocale function is platform-dependent, which means that you have to
