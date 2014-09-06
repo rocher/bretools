@@ -2,12 +2,13 @@
 
 ### *Basic R and External Tools*
 
-This is a set of useful R programs and Rscripts I started to collect during the Data Science Specialization.
+This is a set of useful <tt>R</tt> programs and <tt>Rscripts</tt> I started to
+produce during the Data Science Specialization.
 
 ### Rmdformat
-Script to convert <tt>Rmd</tt> files to other formats: <tt>md</tt> (default),
-<tt>html</tt>, <tt>odt</tt> or <tt>pdf</tt>. To convert to <tt>odf</tt> and 
-<tt>pdf</tt> you must have <tt>pandoc</tt> installed.
+Shell script to convert <tt>Rmd</tt> files to other formats: <tt>md</tt>
+(default), <tt>html</tt>, <tt>odt</tt> or <tt>pdf</tt>. To convert to
+<tt>odf</tt> and <tt>pdf</tt> you must have <tt>pandoc</tt> installed.
 
 ##### Example
 ```sh
