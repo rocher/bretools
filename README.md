@@ -11,33 +11,34 @@ To convert to odf and pdf you must have 'pandoc' installed.
 ### setlocale.R
 Sys.setlocale function is platform-dependent, which means that you have to
 specify different locales for different platforms. For example,
-
-    <code>Sys.setlocale("English")</code>
-
+```R
+    Sys.setlocale("English")
+```
 only works in Windows, and
-
-    <code>Sys.setlocale("en_US")</code> works in Linux and Mac OS X, but it
-
-probably doesn't works in Windows.
+```R
+    Sys.setlocale("en_US")
+```
+works in Linux and Mac OS X, but it probably doesn't works in Windows.
 For example,
-
-    <code>setlocale("LC_ALL", "English", country="US")</code>
-
+```R
+    setlocale("LC_ALL", "English", country="US")
+```
 tries to set locale for <tt>LC_ALL</tt> to <tt>English</tt>, <tt>en</tt>,
 <tt>en_US</tt> and <tt>en_US.UTF-8</tt>, in this order. If the language, the
 short language code and the country have the same two initial letters, then,
 for example:
-
-    <code>setlocale("LC_TIME", "Italian")</code>
-
+```R
+    setlocale("LC_TIME", "Italian")
+```
 tries to set locale for <tt>LC_TIME</tt> to <tt>Italian<tt>, <tt>it</tt>,
 <tt>it_IT</tt> and <tt>it_IT.UTF-8</tt>, in this order. If the language and the
 short language code doesn't share the two initial letters then you have to
 specify them explicitly, for example:
-
-    </code>setlocale("LC_ALL", "Spanish", "es")</code>
-    <code>setlocale("LC_ALL", "Spanish", "es", "AR")</code>
-    <code>setlocale("LC_MESSAGES", "German", "de")</code>
+```R
+    setlocale("LC_ALL", "Spanish", "es")
+    setlocale("LC_ALL", "Spanish", "es", "AR")
+    setlocale("LC_MESSAGES", "German", "de")
+```
 
 The function returns a string with the locale set, or an empty string is none
 could be applied.
