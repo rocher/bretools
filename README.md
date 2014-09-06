@@ -30,7 +30,7 @@ for example:
 ```R
     setlocale("LC_TIME", "Italian")
 ```
-tries to set locale for <tt>LC_TIME</tt> to <tt>Italian<tt>, <tt>it</tt>,
+tries to set locale for <tt>LC_TIME</tt> to <tt>Italian</tt>, <tt>it</tt>,
 <tt>it_IT</tt> and <tt>it_IT.UTF-8</tt>, in this order. If the language and the
 short language code doesn't share the two initial letters then you have to
 specify them explicitly, for example:
